@@ -30,7 +30,7 @@ def get_cli_arguments():
     parser = builder.get_arg_parser(
         "swig",
         "4.0.1",
-        1,
+        2,
         __file__,
         [builder.TARGET_LINUX_x86_64, builder.TARGET_LINUX_arm64_v8a],
     )
