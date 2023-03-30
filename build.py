@@ -63,7 +63,7 @@ if __name__ == "__main__":
         args,
         [
             "./configure",
-            "--prefix=/",
+            f"--prefix={args.install_prefix}",
         ],
         cwd=source_dir,
         env=env,
@@ -84,11 +84,10 @@ if __name__ == "__main__":
         args,
         [
             "make",
-            # f"DESTDIR={args.install_dir}",
             "install",
         ],
         cwd=source_dir,
         env=env,
     )
 
-    builder.create_package(args)
+    builder.create_package(args, args.install_prefix)
